@@ -17,3 +17,16 @@
     (is (= (burden 100 
       [{:name "a" :weight 150 :value 100}]) 
       []))))
+
+(deftest single-doll-of-max-weight
+  (testing "A single doll of the max weight is returned"
+    (is (= (burden 100 
+      [{:name "a" :weight 100 :value 100}]) 
+      [{:name "a" :weight 100 :value 100}]))))
+
+(deftest underweight-and-overweight-doll
+  (testing "If an underweight and overweight are included, return only the underweight"
+    (is (= (burden 100 
+      [{:name "fatty" :weight 150 :value 100} 
+       {:name "skinny" :weight 50 :value 100}]) 
+      [{:name "skinny" :weight 50 :value 100}]))))

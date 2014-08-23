@@ -4,11 +4,7 @@
 
 (defn burden
   ([mw dolls] 
-    (if (empty? dolls) 
-      [] 
-      (if (< mw (:weight (first dolls)))
-        []
-        [(first dolls)]))))
+    (filter (fn [d] (>= mw (:weight d))) dolls)))
 
 
 
