@@ -12,3 +12,8 @@
       [{:name "a" :weight 50 :value 100}]) 
       [{:name "a" :weight 50 :value 100}]))))
 
+(deftest single-overweight-doll
+  (testing "A single overweight doll is not returned"
+    (is (= (burden 100 
+      [{:name "a" :weight 150 :value 100}]) 
+      []))))

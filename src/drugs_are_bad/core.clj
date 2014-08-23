@@ -6,7 +6,9 @@
   ([mw dolls] 
     (if (empty? dolls) 
       [] 
-      [(first dolls)])))
+      (if (< mw (:weight (first dolls)))
+        []
+        [(first dolls)]))))
 
 
 
