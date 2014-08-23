@@ -3,5 +3,5 @@
             [drugs-are-bad.core :refer :all]))
 
 (deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+  (testing "My first clojure"
+    (is (= (msg) "Hello world!"))))
