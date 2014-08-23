@@ -2,6 +2,13 @@
   (:require [clojure.test :refer :all]
             [drugs-are-bad.core :refer :all]))
 
-(deftest a-test
-  (testing "My first clojure"
-    (is (= (msg) "Hello world!"))))
+(deftest empty-doll-list
+  (testing "An empty doll list returns an empty list"
+    (is (= (burden 100 []) []))))
+
+(deftest single-underweight-doll
+  (testing "A single underweight doll is returned"
+    (is (= (burden 100 
+      [{:name "a" :weight 50 :value 100}]) 
+      [{:name "a" :weight 50 :value 100}]))))
+

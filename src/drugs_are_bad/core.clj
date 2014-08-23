@@ -1,13 +1,19 @@
 (ns drugs-are-bad.core
   (:gen-class))
 
-(defn msg
-  "My first clojure"
-  []
-  "Hello world!")
+
+(defn burden
+  ([mw dolls] 
+    (if (empty? dolls) 
+      [] 
+      [(first dolls)])))
+
+
+
+
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println (msg)))
+  (println "Hello world"))
 
