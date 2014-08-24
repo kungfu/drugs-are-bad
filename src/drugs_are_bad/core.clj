@@ -1,9 +1,14 @@
 (ns drugs-are-bad.core
   (:gen-class))
 
-
 (defn weight-sort [ds] 
-  (sort-by (fn [d] (:weight d)) ds))
+  (sort-by #(:weight %) ds))
+
+(defn valsum [dolls] 
+  (reduce + (map #(:value %) dolls)))
+
+(defn max-murder-of-dolls [murder]
+  (last (sort-by valsum murder))) 
 
 (defn burden-sorted
   ([mw dolls] 
