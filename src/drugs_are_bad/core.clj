@@ -4,6 +4,9 @@
 (defn weight-sort [ds] 
   (sort-by #(:weight %) ds))
 
+(defn name-sort [ds]
+  (sort-by #(:name %) ds))
+
 (defn valsum [dolls] 
   (reduce + (map #(:value %) dolls)))
 
