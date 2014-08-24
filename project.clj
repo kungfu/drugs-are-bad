@@ -1,8 +1,8 @@
 (defproject drugs-are-bad "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :description "A response to: Use Clojure to Move Drugs: A Programming Challenge (https://github.com/micahalles/doll-smuggler)"
+  :url "https://github.com/kungfu/drugs-are-bad"
+  :license {:name "WTFPL"
+            :url "http://www.wtfpl.net"}
   :main drugs-are-bad.main
   :aot [drugs-are-bad.main]
   :uberjar-name "drugs-are-bad-standalone.jar"

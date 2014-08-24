@@ -1,105 +1,56 @@
-# Project Name
+# Drugs Are Bad
+![mmmmkay?](doc/img/mackey.jpg)
 
-drugs-are-bad is ....
+**drugs-are-bad** is a response to [Use Clojure to Move Drugs: A Programming Challenge](https://github.com/micahalles/doll-smuggler).
 
+While I didn't solve the NP-complete problem, I still had a good time learning Clojure. The algorithm succeeds against a number of different inputs, including the example given on Micah's GitHub page.
 
-## Project Goals
+In addition, I've included a web interface for our team of drug dealers. It's ugly, and not too responsive, but if we give tablets to our drug traffickers, we should be able to assist them when dealing with the little old ladies of Eastown.
 
-TODO
+## Project Structure
 
+The core code for solving the problem of which dolls our mule can carry
+lies in `src/drugs_are_bad/core.clj`. The corresponding tests can be found
+in `test/drugs_are_bad/core_test.clj`. The main function is called `burden`,
+as in *burden all these poor old ladies with loads of illegal substances*.
 
-## Community
+The rest of the project contains a number of other folders and files for the
+web server application. Most of these came along with [http-kit lein template](https://github.com/http-kit/lein-template). It is a single page application that uses ajax to calculate the
+most efficient use of our old lady smugglers. The following files are of note:
 
-[... has a mailing list](https://groups.google.com/forum/#!forum/clojure-...). Feel free to join it and ask any questions you may have.
+* `src/drugs_are_bad/handlers/api.clj` - Contains the endpoint that our our ajax call uses
+to call the `burden` function
+* `public/js/app.js` - Contains the javascript that runs the web interface
+* `src/templates/landing.tpl` - Contains the html template for the single page web app
 
-To subscribe for announcements of releases, important changes and so on, please follow [@ClojureWerkz](https://twitter.com/#!/clojurewerkz) on Twitter.
+## Compilation
 
+You will need:
 
-## Project Maturity
+* [Leiningen](http://leiningen.org/) > v2.0
 
-... is *very* young.
+All other dependencies, including Clojure, will be downloaded automatically
+on the first run.
 
+## Running the Tests
 
+In a terminal, run the following:
 
-## Artifacts
-
-... artifacts are [released to Clojars](https://clojars.org/drugs-are-bad). If you are using Maven, add the following repository
-definition to your `pom.xml`:
-
-``` xml
-<repository>
-  <id>clojars.org</id>
-  <url>http://clojars.org/repo</url>
-</repository>
+```
+$ lein test
 ```
 
-### The Most Recent Release
+All tests against the core `burden` algorithm are located in `test/drugs_are_bad/core_test.clj`, 
+including the example input from Micah's GitHub project page.
 
-With Leiningen:
+## Running the Web Server
 
-    [drugs-are-bad "1.0.0-alpha1"]
+To start the web server, run the following in a terminal:
 
+```
+$ ./scripts/run
+```
 
-With Maven:
+The web server will listen on port 8080 by default. Open `http://localhost:8080/`
+in a web browser. The rest should be self-explanatory.
 
-    <dependency>
-      <groupId>clojurewerkz</groupId>
-      <artifactId>drugs-are-bad</artifactId>
-      <version>1.0.0-alpha1</version>
-    </dependency>
-
-
-
-## Getting Started
-
-Please refer to our [Getting Started guide](...). Don't hesitate to join our [mailing list](https://groups.google.com/forum/#!forum/clojure-...) and ask questions, too!
-
-
-## Documentation & Examples
-
-Our documentation site is not yet live, sorry.
-
-
-
-## Supported Clojure versions
-
-drugs-are-bad is built from the ground up for Clojure 1.5.1 and up.
-
-
-## Continuous Integration Status
-
-[![Continuous Integration status](https://secure.travis-ci.org/clojurewerkz/drugs-are-bad.png)](http://travis-ci.org/clojurewerkz/drugs-are-bad)
-
-
-
-## ... Is a ClojureWerkz Project
-
-drugs-are-bad is part of the [group of Clojure libraries known as ClojureWerkz](http://clojurewerkz.org), together with
- * [Monger](http://clojuremongodb.info)
- * [Langohr](https://github.com/michaelklishin/langohr)
- * [Elastisch](https://github.com/clojurewerkz/elastisch)
- * [Welle](http://clojureriak.info)
- * [Neocons](http://clojureneo4j.info)
- * [Quartzite](https://github.com/michaelklishin/quartzite) and several others.
-
-
-## Development
-
-drugs-are-bad uses [Leiningen
-2](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md). Make
-sure you have it installed and then run tests against supported
-Clojure versions using
-
-    lein2 all test
-
-Then create a branch and make your changes on it. Once you are done
-with your changes and all tests pass, submit a pull request on GitHub.
-
-
-
-## License
-
-Copyright (C) 2014 Michael S. Klishin, Alex Petrov.
-
-Double licensed under the [Eclipse Public License](http://www.eclipse.org/legal/epl-v10.html) (the same as Clojure) or
-the [Apache Public License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
