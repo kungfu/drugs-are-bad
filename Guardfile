@@ -18,7 +18,22 @@ def run_all_tests
   }
 end
 
+def run_jslint
+  execute_jslint %{
+    jslint public/js/app.js
+  }
+end
+
+def execute_jslint(cmd)
+  if system(cmd)
+    n 'JSLint succeeded', 'jslint', :success
+  else
+    n 'JSLint failed', 'jslint', :failed
+  end
+end
+
 guard :shell do
   watch(%r{src/(.+)\.clj$})  { run_all_tests }
   watch(%r{test/(.+)\.clj$}) { run_all_tests }
+  watch(%r{public/js/app.js$}) { run_jslint }
 end
