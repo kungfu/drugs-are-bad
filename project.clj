@@ -12,7 +12,7 @@
                  [compojure "1.1.5"]
                  [ring/ring-core "1.1.8"]
 
-                 [org.clojure/data.json "0.2.1"]
+                 [org.clojure/data.json "0.2.5"]
 
                  [http-kit "2.1.16"]
 
