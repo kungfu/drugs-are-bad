@@ -17,8 +17,8 @@
           <a class="brand" href="#">{{sanitized-ns}}</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a target="_blank" href="https://github.com/kungfu/drugs-are-bad">About</a></li>
               <li><a href="mailto:chad@freakingawesome.net">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
