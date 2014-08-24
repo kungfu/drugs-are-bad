@@ -2,11 +2,15 @@
   (:gen-class))
 
 
-(defn burden
+(defn weight-sort [ds] 
+  (sort-by (fn [d] (:weight d)) ds))
+
+(defn burden-sorted
   ([mw dolls] 
     (filter (fn [d] (>= mw (:weight d))) dolls)))
 
-
+(defn burden [mw dolls]
+  (burden-sorted mw (weight-sort dolls)))
 
 
 
