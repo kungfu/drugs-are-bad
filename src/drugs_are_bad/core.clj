@@ -7,7 +7,11 @@
 
 (defn burden-sorted
   ([mw dolls] 
-    (filter (fn [d] (>= mw (:weight d))) dolls)))
+    (let [d (first dolls)
+          dw (:weight d)]
+      (if (and d (>= mw dw))
+        (cons d (burden-sorted (- mw dw) (rest dolls)))
+        []))))
 
 (defn burden [mw dolls]
   (burden-sorted mw (weight-sort dolls)))
