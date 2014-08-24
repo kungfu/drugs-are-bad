@@ -31,15 +31,15 @@
        {:name "skinny" :weight 50 :value 100}]) 
       [{:name "skinny" :weight 50 :value 100}]))))
 
-;(deftest three-underweights-yet-only-two-can-fit
-  ;(testing "Three underweight dolls yet only two can fit"
-    ;(is (= (burden 100 
-      ;[{:name "a" :weight 50 :value 50} 
-       ;{:name "b" :weight 50 :value 100} 
-       ;{:name "c" :weight 50 :value 150}])
-;
-      ;[{:name "b" :weight 50 :value 100} 
-       ;{:name "c" :weight 50 :value 150}]))))
+(deftest three-underweights-yet-only-two-can-fit
+  (testing "Three underweight dolls yet only two can fit"
+    (is (= (burden 100 
+      [{:name "a" :weight 50 :value 50} 
+       {:name "b" :weight 50 :value 100} 
+       {:name "c" :weight 50 :value 150}])
+
+      [{:name "b" :weight 50 :value 100} 
+       {:name "c" :weight 50 :value 150}]))))
 
 (deftest weight-sort-test
   (testing "Make sure we can sort dolls by weight"

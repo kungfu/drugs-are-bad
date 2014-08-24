@@ -15,7 +15,9 @@
     (let [d (first dolls)
           dw (:weight d)]
       (if (and d (>= mw dw))
-        (cons d (burden-sorted (- mw dw) (rest dolls)))
+        (max-murder-of-dolls [
+          (burden-sorted mw (rest dolls))
+          (cons d (burden-sorted (- mw dw) (rest dolls)))])
         []))))
 
 (defn burden [mw dolls]
